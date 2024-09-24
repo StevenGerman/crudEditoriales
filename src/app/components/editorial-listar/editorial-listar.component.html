@@ -1,1 +1,47 @@
-<p>editorial-listar works!</p>
+<div class="card mt-3">
+    <div class="card-header grid text-center">
+        <div class="g-col-4"><h5>Listado Editoriales</h5></div>
+        <div class="g-col-4"></div>
+        <div class="g-col-2"><a
+            class="btn btn-primary"
+            routerLink="agregar-editorial"
+            role="button"
+            >Agregar Editorial</a
+        ></div>
+      </div>
+    
+    
+    <div class="card-body">
+        <div
+            class="table-responsive"
+        >
+            <table
+                class="table table-striped"
+            >
+                <thead>
+                    <tr>
+                        <th scope="col">idEditorial</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Direccion</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Localidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  *ngFor="let editorial of Editoriales; let iControl = index">
+                        <td scope="row">{{editorial.idEditorial}}</td>
+                        <td> {{editorial.ediNombre}} </td>
+                        <td> {{editorial.ediDireccion}} </td>
+                        <td> {{editorial.ediTelefono}} </td>
+                        <td> {{editorial.ediEmail}} </td>
+                        <td> {{editorial.localidadID}} </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    
+</div>
