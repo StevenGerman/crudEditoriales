@@ -20,6 +20,16 @@ export class EditorialListarComponent implements OnInit {
     });
   }
 
+  borrarEditorial(id:any,iControl:any){
+    console.log(id);
+    //console.log(iControl);
+    if(window.confirm("¿Desea borrar el registro?")){
+      this.servicioEditoriales.BorrarEditorial(id).subscribe((respuesta) =>{
+        this.Editoriales.splice(iControl,1);
+      });
+    }
+  }
+
 
 
 

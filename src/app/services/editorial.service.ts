@@ -21,5 +21,11 @@ export class EditorialService {
     return this.clienteHttp.post(this.API,datosEditorial);
   }
 
+  
+  BorrarEditorial(id:any){
+    return this.clienteHttp.delete(`https://escuelasagarna.com/APIBiblioteca/editorial.php?idEditorial=${id}`);
+  }  
+
+
 
 }

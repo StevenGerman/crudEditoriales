@@ -4,6 +4,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { EditorialService } from 'src/app/services/editorial.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-editorial-agregar',
   templateUrl: './editorial-agregar.component.html',
@@ -15,7 +17,8 @@ export class EditorialAgregarComponent implements OnInit {
 
   constructor(
     private servicioEditoriales:EditorialService,
-    public formulario: FormBuilder
+    public formulario: FormBuilder,
+    private ruteador:Router
 
   ){
 
@@ -39,7 +42,7 @@ export class EditorialAgregarComponent implements OnInit {
     console.log(this.formularioEditoriales.value);
     this.servicioEditoriales.AgregarEditorial(this.formularioEditoriales.value).subscribe();
 
-    //this.ruteador.navigateByUrl('/listar-empleado');
+    this.ruteador.navigateByUrl('/editorial-listar');
   }
 
 

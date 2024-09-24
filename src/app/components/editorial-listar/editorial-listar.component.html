@@ -26,6 +26,7 @@
                         <th scope="col">Telefono</th>
                         <th scope="col">Email</th>
                         <th scope="col">Localidad</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +36,25 @@
                         <td> {{editorial.ediDireccion}} </td>
                         <td> {{editorial.ediTelefono}} </td>
                         <td> {{editorial.ediEmail}} </td>
-                        <td> {{editorial.localidadID}} </td>
+                        <td> {{editorial.LocalidadID}} </td>
+                        <td>
+                            
+                                <a
+                                  class="btn btn-warning"
+                                  
+                                  >Editar</a
+                                >
+                  
+                                |
+                  
+                                <a
+                                  class="btn btn-danger"
+                                  role="button"
+                                  (click)="borrarEditorial(editorial.idEditorial,iControl)"
+                                  >Borrar</a
+                                >
+                              
+                        </td>
                     </tr>
                     
                 </tbody>
