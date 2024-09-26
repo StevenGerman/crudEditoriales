@@ -32,6 +32,7 @@ export class EditorialEditarComponent implements OnInit {
     this.servicioEditoriales.ObtenerEditorial(this.idEditorial).subscribe((respuesta)=>{
       console.log(respuesta);
       this.formularioEditoriales.setValue({
+        idEditorial:respuesta[0]['idEditorial'],
         ediNombre:respuesta[0]['ediNombre'],
         ediDireccion:respuesta[0]['ediDireccion'],
         ediTelefono:respuesta[0]['ediTelefono'],
@@ -42,6 +43,7 @@ export class EditorialEditarComponent implements OnInit {
     });
 
     this.formularioEditoriales = this.formulario.group({
+      idEditorial:[''],
       ediNombre:[''],
       ediDireccion:[''],
       ediTelefono:[''],
@@ -58,7 +60,8 @@ export class EditorialEditarComponent implements OnInit {
   enviarDatos():any{
     console.log(this.idEditorial);
     console.log(this.formularioEditoriales.value); 
-    this.servicioEditoriales.EditarEmpleado(this.idEditorial,this.formularioEditoriales.value).subscribe((respuesta)=>{
+    this.servicioEditoriales.EditarEditorial(this.formularioEditoriales.value).subscribe((respuesta)=>{
+      console.log(respuesta);
       this.ruteador.navigateByUrl('/listar-editorial');
     });
   }      

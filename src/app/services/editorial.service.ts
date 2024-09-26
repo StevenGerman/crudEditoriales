@@ -31,8 +31,8 @@ export class EditorialService {
 
 
 
-  EditarEmpleado(idEditorial:any,datosEditorial:Editorial):Observable<any>{
-    return this.clienteHttp.put(`https://escuelasagarna.com/APIBiblioteca/editorial.php?idEditorial=${idEditorial}`,datosEditorial);
+  EditarEditorial(datosEditorial:Editorial){
+    return this.clienteHttp.put(this.API,datosEditorial);
   }
 
 
