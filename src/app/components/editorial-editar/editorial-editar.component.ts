@@ -55,8 +55,13 @@ export class EditorialEditarComponent implements OnInit {
     
   }
 
-  enviarDatos(){
-
-  }
+  enviarDatos():any{
+    console.log(this.idEditorial);
+    console.log(this.formularioEditoriales.value); 
+    this.servicioEditoriales.EditarEmpleado(this.idEditorial,this.formularioEditoriales.value).subscribe((respuesta)=>{
+      this.ruteador.navigateByUrl('/listar-editorial');
+    });
+  }      
+  
 
 }
