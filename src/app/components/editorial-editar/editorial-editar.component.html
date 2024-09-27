@@ -1,1 +1,58 @@
-<p>editorial-editar works!</p>
+<div class="card mt-3">
+    <div class="card-header">Editar Persona</div>
+    <div class="card-body">
+      <form  [formGroup]="formularioEditoriales"  (ngSubmit)="enviarDatos()" >
+        <div class="mb-3">
+          <label for="" class="form-label">Nombre:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="ediNombre"
+            placeholder="Escribe tu nombre"
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label for="" class="form-label">Direccion:</label>
+          <input type="email" formControlName="ediDireccion"  class="form-control" placeholder="" />
+        </div>
+  
+        <div class="mb-3">
+            <label for="" class="form-label">Telefono</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="ediTelefono"
+                aria-describedby="helpId"
+                placeholder="3435-212211"
+            />
+        </div>
+        
+        <div class="mb-3">
+            <label for="" class="form-label">Email</label>
+            <input
+                type="email"
+                class="form-control"
+                formControlName="ediEmail"
+                aria-describedby="helpId"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">localidadID</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="LocalidadID"
+                aria-describedby="helpId"
+            />
+        </div>
+        
+        
+
+        <div class="btn-group" role="group" aria-label="">
+          <button type="submit" class="btn btn-success">Agregar</button>
+          <button type="button" class="btn btn-primary">Cancelar</button>
+        </div>
+      </form>
+    </div>
+</div>
