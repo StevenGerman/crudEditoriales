@@ -4,7 +4,7 @@ export interface Editorial{
     ediDireccion: String;
     ediTelefono: String;
     ediEmail: String;
-    LocalidadID: String;
+    locNombre: String;
 
 
 }
