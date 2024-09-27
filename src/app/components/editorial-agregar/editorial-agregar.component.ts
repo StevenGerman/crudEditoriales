@@ -40,9 +40,11 @@ export class EditorialAgregarComponent implements OnInit {
   enviarDatos():any{ 
     
     console.log(this.formularioEditoriales.value);
-    this.servicioEditoriales.AgregarEditorial(this.formularioEditoriales.value).subscribe();
+    this.servicioEditoriales.AgregarEditorial(this.formularioEditoriales.value).subscribe(()=>{
+      this.ruteador.navigateByUrl('/listar-editorial');
+    });
 
-    this.ruteador.navigateByUrl('/editorial-listar');
+    
   }
 
 
